@@ -2,15 +2,19 @@ import React from 'react';
 import '../stylesheets/App.css';
 import {fetchData}  from '../services/Api.js';
 import CharacterList from './CharacterList';
+import Search from './Search';
+
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    // this.fetchData=this.fetchData.bind(this)
+    this.onChangeHandler=this.onChangeHandler.bind(this)
     this.state={
-      allCharacters: []
+      allCharacters: [],
+      value:'',
     }
   }
+
   componentDidMount(){
     fetchData()
       .then(data => {
@@ -22,11 +26,21 @@ class App extends React.Component {
     
 };
 
+  onChangeHandler(patata){ //patata es el dato que me manda mi hijo Search
+    this.setState({
+      value: patata
+    })  
+  }
+
   render() {
     return (
       <div className="App">
+        <Search 
+          onChangeHandler={this.onChangeHandler}
+        />
         <CharacterList
           allCharacters={this.state.allCharacters} 
+          value={this.state.value}
         />
       </div>
     );

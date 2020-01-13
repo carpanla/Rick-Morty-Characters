@@ -7,14 +7,15 @@ const CharacterList = props => {
     return <div>
                 <ul> 
                     {props.allCharacters
-                    // .filter(recipe => props.value === '' || recipe.strMeal.toLowerCase().includes(props.value.toLowerCase()))
+                        .filter(character => props.value === '' || character.name.toLowerCase().includes(props.value.toLowerCase()))
                         .map ((character) => <li className="character-wrapper" key={character.id}>
                             <CharacterCard
                                 image = {character.image}
                                 name = {character.name}
+                                species = {character.species}
                                 id = {character.id}
                             />
-                    </li>
+                        </li>
                     )} 
                 </ul>
             </div>
