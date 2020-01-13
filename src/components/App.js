@@ -5,6 +5,7 @@ import {fetchSingleId}  from '../services/Api.js';
 import CharacterList from './CharacterList';
 import Search from './Search';
 import SingleCharacter from './SingleCharacter';
+import Header from './Header';
 import { Route, Switch } from 'react-router-dom';
 
 
@@ -60,6 +61,7 @@ class App extends React.Component {
       <div className="App">
         <Switch>
           <Route exact path="/" >
+            <Header/>
             <Search 
               onChangeHandler={this.onChangeHandler}
             />

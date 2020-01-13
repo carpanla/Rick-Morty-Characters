@@ -1,6 +1,7 @@
 import React from 'react';
 import CharacterCard from './CharacterCard';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const CharacterList = props => {
     return <div>
@@ -21,5 +22,9 @@ const CharacterList = props => {
                 </ul>
             </div>
 }
+
+CharacterList.propTypes = {
+    allCharacters: PropTypes.array
+};
 
 export default CharacterList;

@@ -1,15 +1,24 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const SingleCharacter = props => {
   console.log(props.character)
-  return <div className="character-info-wrapper">
+  return <div className="info_wrapper">
           <img src={props.character.image} alt={props.character.name}/>
-          <h1>{props.character.name}</h1>
-          <p>{props.character.species}</p>
-          <p>{props.character.status}</p>
+          <h1>Name: {props.character.name}</h1>
+          <p>Specie: {props.character.species}</p>
+          <p>Status: {props.character.status}</p>
           {/* <p>{props.character.origin}</p>
           <p>{props.character.episode}</p> */}
         </div>
+}
+
+SingleCharacter.propTypes = {
+  character: PropTypes.object,
+  name:PropTypes.string,
+  image: PropTypes.string,
+  species: PropTypes.string,
+  status: PropTypes.string
 }
 
 export default SingleCharacter;

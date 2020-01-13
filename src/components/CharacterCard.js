@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const CharacterCard = props => {
   return <div className="card__container" id={props.id}>
@@ -9,5 +10,11 @@ const CharacterCard = props => {
             <h3 className="specie__card">{props.species}</h3>
         </div>
 };
+
+CharacterCard.propTypes = {
+    name:PropTypes.string,
+    img: PropTypes.string,
+    species: PropTypes.string
+}
 
 export default CharacterCard;
