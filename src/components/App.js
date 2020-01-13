@@ -1,18 +1,24 @@
 import React from 'react';
 import '../stylesheets/App.css';
 import {fetchData}  from '../services/Api.js';
+import {fetchSingleId}  from '../services/Api.js';
 import CharacterList from './CharacterList';
 import Search from './Search';
+import SingleCharacter from './SingleCharacter';
+import { Route, Switch } from 'react-router-dom';
 
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.onChangeHandler=this.onChangeHandler.bind(this)
     this.state={
       allCharacters: [],
       value:'',
+      singleCharacter: {}
     }
+    this.onChangeHandler=this.onChangeHandler.bind(this)
+    this.fetchSingleId=this.fetchSingleId.bind(this)
+    this.renderCharacter=this.renderCharacter.bind(this)
   }
 
   componentDidMount(){
@@ -23,25 +29,47 @@ class App extends React.Component {
         })
         console.log(this.state.allCharacters);
       });
-    
-};
+  }
 
-  onChangeHandler(patata){ //patata es el dato que me manda mi hijo Search
+  fetchSingleId(id){
+    if (id !== this.state.singleCharacter.id){
+      fetchSingleId(id)
+      .then(data => {
+        this.setState({
+          singleCharacter: data,
+        })
+        console.log(this.state.singleCharacter)
+      })
+    }
+  }
+  
+  onChangeHandler(value){ 
     this.setState({
-      value: patata
+      value: value
     })  
+  }
+
+  renderCharacter(props) {
+    console.log(props)
+    this.fetchSingleId(props.match.params.id)
+    return <SingleCharacter character={this.state.singleCharacter}/>
   }
 
   render() {
     return (
       <div className="App">
-        <Search 
-          onChangeHandler={this.onChangeHandler}
-        />
-        <CharacterList
-          allCharacters={this.state.allCharacters} 
-          value={this.state.value}
-        />
+        <Switch>
+          <Route exact path="/" >
+            <Search 
+              onChangeHandler={this.onChangeHandler}
+            />
+            <CharacterList
+              allCharacters={this.state.allCharacters} 
+              value={this.state.value}
+            />
+          </Route>  
+          <Route path="/character/:id" render={this.renderCharacter}></Route>
+         </Switch>  
       </div>
     );
   }
