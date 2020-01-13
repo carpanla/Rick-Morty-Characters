@@ -1,0 +1,20 @@
+.card__container{
+    background-color: lightsteelblue;
+    height: 245px;
+    border: solid 2px #01b0c7;
+}
+
+.name__card{
+    color: darkslategray;
+    font-size: 16px;
+    text-decoration: none;
+    margin-top: 2px;
+    padding: 3px;
+}
+
+.specie__card{
+    color: darkslategray;
+    font-size: 14px;
+    text-decoration: none;
+    margin-bottom: 5px;
+}

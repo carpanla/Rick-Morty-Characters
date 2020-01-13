@@ -12,8 +12,7 @@ const Search = props => {
         <input type="text" value={props.value} name="name" placeholder="Name" onChange={onChangeHandler}  />
         </form>
     </div>
-    
-  };
+};
 
 Search.propTypes = {
     search: PropTypes.string

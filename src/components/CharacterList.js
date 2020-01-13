@@ -1,11 +1,12 @@
 import React from 'react';
 import CharacterCard from './CharacterCard';
 import { Link } from 'react-router-dom';
+import '../stylesheets/CharacterList.css';
 import PropTypes from 'prop-types';
 
 const CharacterList = props => {
     return <div>
-                <ul> 
+                <ul className="app__list"> 
                     {props.allCharacters
                         .filter(character => props.value === '' || character.name.toLowerCase().includes(props.value.toLowerCase()))
                         .map ((character) => <li className="character-wrapper" key={character.id}>
