@@ -33,7 +33,8 @@ class App extends React.Component {
   }
 
   fetchSingleId(id){
-    if (id !== this.state.singleCharacter.id){
+    const id_num = parseInt(id);
+    if (id_num !== this.state.singleCharacter.id){
       fetchSingleId(id)
       .then(data => {
         this.setState({
@@ -52,7 +53,7 @@ class App extends React.Component {
 
   renderCharacter(props) {
     console.log(props)
-    this.fetchSingleId(props.match.params.id)
+    this.fetchSingleId(props.match.params.id);
     return <SingleCharacter character={this.state.singleCharacter}/>
   }
 
@@ -71,7 +72,7 @@ class App extends React.Component {
             />
           </Route>  
           <Route path="/character/:id" render={this.renderCharacter}></Route>
-         </Switch>  
+        </Switch>  
       </div>
     );
   }
