@@ -32,6 +32,8 @@
     justify-content: center;
     align-items: center;
     padding: 10px;
+    text-align: center;
+    color: darkslategray;
 }
 .detail__image{
     margin-top: 10px;
@@ -43,9 +45,6 @@
     font-weight: 700;
 }
 
-.detail__list{
-    color: darkslategray;
-}
 
 /* **************************MEDIA QUERIES ********************************** */
 @media all and (min-width:768px) {
