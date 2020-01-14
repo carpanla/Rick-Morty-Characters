@@ -3,10 +3,10 @@
     display:flex;
     justify-content: center;
     align-items: center;
-    height: 150px;
+    height: 200px;
 }
 
 .header_logo {
-    height: 100px;
-    max-width: 50%;
+    height: 110px;
+    max-width: 65%;
 }

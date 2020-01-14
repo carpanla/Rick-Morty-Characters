@@ -94,8 +94,13 @@
 }
 
 .detail__title {
+    color: darkslategray;
     width: 100px;
     font-weight: 600;
+}
+
+.detail__list{
+    color: darkslategray;
 }
 
 .fas {
