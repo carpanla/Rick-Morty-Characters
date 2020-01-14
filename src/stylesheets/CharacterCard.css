@@ -1,14 +1,15 @@
 .card__container{
     background-color: lightsteelblue;
-    height: 245px;
+    height: 290px;
     border: solid 2px #01b0c7;
+    width: 225px;
 }
 
 .name__card{
     color: darkslategray;
     font-size: 16px;
     text-decoration: none;
-    margin-top: 2px;
+    margin-top: 5px;
     padding: 3px;
 }
 
@@ -18,3 +19,7 @@
     text-decoration: none;
     margin-bottom: 5px;
 }
+.img__container{
+    margin-top: 10px;
+}
+
