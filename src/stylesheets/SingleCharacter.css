@@ -3,6 +3,7 @@
     font-size: 14px;
 }
 .back {
+    font-size: 16px;
     margin: auto;
     align-items: center;
     text-align: center;
@@ -41,7 +42,7 @@
 @media all and (min-width:768px) {
     .detail__container {
         text-align: left;
-        background-color: lightskyblue;
+        background-color:  lightsteelblue;
         display: flex;
         margin: auto;
         align-items: center;
@@ -52,7 +53,7 @@
 @media all and (min-width:1200px) {
     .detail__container {
         text-align: left;
-        background-color: lightskyblue;
+        background-color:  lightsteelblue;
         display: flex;
         margin: auto;
         align-items: center;
